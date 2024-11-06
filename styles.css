@@ -1,0 +1,245 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #FFD700;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.p{
+    text-align: center;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    max-width: 80px;
+    margin-right: 10px;
+}
+
+.header-right a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header-right a:hover {
+    color: #FF4500;
+}
+
+header img {
+    max-width: 200px;
+    transition: transform 0.5s ease-in-out;
+}
+
+header img:hover {
+    transform: scale(1.1);
+}
+
+h1, h2 {
+    color: #FFA500;
+}
+
+.section {
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Aparece cuando la sección está en vista */
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para "Quiénes somos" */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#about h2 {
+    margin-bottom: 20px;
+}
+
+.about-content {
+    max-width: 800px; /* Ancho máximo para la sección de texto */
+    text-align: justify; /* Justifica el texto */
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Estilo para animaciones de entrada */
+.about-content p, .about-content h3 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-content p.show, .about-content h3.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para la sección de productos */
+#products {
+    text-align: center;
+    padding: 20px;
+}
+
+#products h2 {
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Estilo para cada producto */
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #FAF0E6;
+}
+
+.product img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+}
+
+.product p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Sección de videos */
+#videos {
+    background-color: #FFF8DC;
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#videos video {
+    max-width: 350px;
+    width: 100%;
+    margin: 100px;
+    height: 550px;
+    border-radius: 8px;
+    transition: transform 0.5s;
+}
+
+#videos video:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para la sección de contacto */
+#contact {
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#contact.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.p{
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #FFA500; /* Cambia el color al hacer hover */
+}
+
+
+/* Pie de página */
+footer {
+    background-color: #FFD700;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animación para el logo */
+@keyframes logoZoom {
+    0% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+header img {
+    animation: logoZoom 1s ease-out forwards;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+ 
+    #products {
+        flex-direction: column;
+    }
+
+    #videos video {
+        max-width: 90%;
+    }
+    
+}
